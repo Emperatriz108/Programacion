@@ -1,3 +1,6 @@
+//Este programa fue creado por: Gema Emperatriz Manzano Machuca
+//Carnet: MM18024
+
 #include <iostream>
 #include <iomanip>
 #include <windows.h> 
