@@ -4,7 +4,7 @@
 //Asignatura: Programacion I
 //Nombre: Gema Emperatriz Manzano Machuca
 //Carnet: MM18024
-//Fecha de creacion: 00-10-2018
+//Fecha de creacion: 18-10-2018
 //Descripcion: Crear un programa que pregunte al usuario cuantos empleados tiene 
 //Preguntar el codigo, nombre, edad, departamento, puesto y salario de cada empleado
 //Y calcular isss, afp, renta, prestamos y salario liquido.
@@ -18,7 +18,7 @@
 
 using namespace std;
 //Estructura:
-//La estructura es una colección de variables de diferentes tipos de datos bajo un solo nombre.
+//La estructura es una colecciÃ³n de variables de diferentes tipos de datos bajo un solo nombre.
 
 //Para este ejercicio se va a utilizar una estructura "Empleado".
 //En esta se va a almacenar los datos para el empleado.
@@ -95,7 +95,7 @@ float calrenta(float sal){
 int main(int argc, char** argv) {
 	int n;
 	
-cout<<"¿cuantos empleados tiene?"<<endl;
+cout<<"Â¿cuantos empleados tiene?"<<endl;
 cin>>n;
 Empleado e[n];
 Sucursal s;
