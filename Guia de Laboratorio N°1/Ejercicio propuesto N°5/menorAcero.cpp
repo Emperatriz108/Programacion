@@ -1,9 +1,16 @@
+//Universidad de El Salvador
+//Facultad Multidisciplinaria Oriental
+//Programacion II
+//Hecho por: Gema Emperatriz Manzano Machuca
+//Fecha de creacion: 17/02/2019
+//Objetivo: Escribir una función menorAcero() al que se pasan dos argumentos int por referencia y a 
+//continuación fijar el menor de los dos números a 0.
+
 #include <iostream>
 
 using namespace std;
 
 void menorAcero(int &a, int &b);
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
 	int num1;
