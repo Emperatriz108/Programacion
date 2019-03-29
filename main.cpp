@@ -1,120 +1,80 @@
-#include <cstdlib>
 #include <iostream>
-#include <winsock2.h>
-#include <mysql.h>
-#include <mysqld_error.h>
 using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void b();
-int menu();
-int main(int argc, char *argv[])
-{  
-	MYSQL *conn;
-    MYSQL  mysql;
-    MYSQL_RES *res;
-    MYSQL_ROW row;
-    mysql_init(&mysql);
-    conn=mysql_real_connect(&mysql,"localhost","root","","clientes",0,0,0);
-    
-	cout<<"++++++++++++++++++++++++++++++++++++++++"<<endl;
-	cout<<"<<<<<<<<<<<<<<<< MENU >>>>>>>>>>>>>>>>>>"<<endl;
-	cout<<"++++++++++++++++++++++++++++++++++++++++"<<endl;
-	int m;
-    menu();
-    cin>>m;
-    b();
-    
-    switch (m)
-	{
-		case 1:
-		
-		    if(conn==NULL)
-		    {  cout<<mysql_error(&mysql)<<endl;
-		       system("pause");
-		     /// return 1;
-		        
-		    }
-		    mysql_query(conn,"select * from clientes");
-		    res=mysql_store_result(conn);
-		    
-			cout<<"CodClientes---- Nombre ----- Apellido ------Telefono-----"<<endl;
-		    while((row=mysql_fetch_row(res))!=NULL)
-		    {
-		    	
-		        cout<<row[0]<<"\t";
-		        cout<<row[1]<<"\t";
-		        cout<<row[2]<<"\t";
-		        cout<<row[3]<<endl;
-		    }
-		   // mysql_real_connect(obj,NULL,'root','','practica2',3306,NULL,0);
-		   mysql_close(conn);
-		    cout<<"se conecto"<<endl;
-		    system("pause");
-		    
-		case 2:
-			
-			if(conn==NULL)
-		    {  cout<<mysql_error(&mysql)<<endl;
-		       system("pause");
-		     /// return 1;
-		        
-		    }
-		    mysql_query(conn,"select * from producto");
-		    res=mysql_store_result(conn);
-		    
-		    cout<<"CodProducto---- Nombre ----- Preci0 ------"<<endl;
-		    while((row=mysql_fetch_row(res))!=NULL)
-		    {
-		        cout<<row[0]<<"\t";
-		        cout<<row[1]<<"\t";
-		        cout<<row[2]<<"\t";
-		        cout<<row[3]<<endl;
-		    }
-		 
-		   	mysql_close(conn);
-		    system("pause");
-		    
-		case 3:
-			if(conn==NULL)
-			
-		    {  cout<<mysql_error(&mysql)<<endl;
-		       system("pause");
-		        
-		    }
-		    mysql_query(conn,"select * from cotizaciones");
-		    res=mysql_store_result(conn);
-		    cout<<"CodCotizacion-- CodProducto --- CodCliente ---Fecha-----"<<endl;
-		    while((row=mysql_fetch_row(res))!=NULL)
-		    {
-		        cout<<row[0]<<"\t";
-		        cout<<row[1]<<"\t";
-		        cout<<row[2]<<"\t";
-		        cout<<row[3]<<endl;
-		    }
-		   
-		   mysql_close(conn);
-		    system("pause");
-		    
-		default:
-			cout<<"<<<<<<<< Adios que tenga un buen dia >>>>>>>>>>>>"<<endl;	
-			
+class Pila{
+	private:
+		class Nodo{
+		public:
+		int info;
+		Nodo *sig;	
+	};
+	Nodo *raiz;
+	public:
+		Pila();//contructor
+		~Pila();//destructor: limpiar la memoria del operador
+		void insertar(int x);
+		int extraer();
+		void imprimir();
+};
+
+//Nombre de clase,,, accion
+Pila::Pila()
+{
+    raiz = NULL;
+}
+
+
+void Pila::insertar(int x){
+	Nodo *nuevo;//crear un objeto de tipo nodo reserva el espacio
+	nuevo = new Nodo();//divide info, puntero
+	nuevo -> info = x;
+	if(raiz == NULL){//raiz siempre esta apuntando a NULL	
+		raiz=nuevo;
+		nuevo ->sig = NULL;//10 APUNTA A NULL
+	}
+	else{
+		nuevo ->sig = raiz;//pasar posicion  
+		raiz = nuevo;
+	}
+}
+//cap de deper
+
+int Pila::extraer(){
+	 if (raiz != NULL)
+    {
+        int informacion = raiz->info;
+        Nodo *bor = raiz;
+        raiz = raiz->sig;
+        delete bor;
+        return informacion;
     }
-	return 0;
-
+    else
+    {
+        return -1;
+    }
 }
 
-int menu ()
-{
-	cout << "1. Clientes." << endl;
-	cout << "2. Productos cotizados." << endl;
-	cout << "3. Cotizaciones"<<endl;
-	cout << "4. Salir." << endl;
+
+int main(int argc, char** argv) {
+	Pila *pila1;
+	pila1= new Pila();//llamar a constructor
 	
-	system ("color f8")	; //color	
+	int a;
+	int b;
+	cout<<"Ingrese a: ";
+	cin>>a;
+	cout<<endl;
+	cout<<"Ingrese b: ";
+	cin>>b;
+	cout<<endl;
+	
+	pila1->insertar(a);
+	pila1->insertar(b);
+	pila1->imprimir();
+
+	
+	return 0;
 }
 
-void b ()
-{
-	system ("cls"); //borrar
 
-}
