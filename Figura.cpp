@@ -197,13 +197,3 @@ int main(){
 	getch();
 	return 0;
 }
-
-void menu(){
-	cout<<"-------------MENU------------"<<endl;
-	cout<<"1. Rectangulo"<<endl;
-	cout<<"2. Cuadrado"<<endl;
-	cout<<"3. Triangulo"<<endl;
-	cout<<"4. Salir"<<endl;
-}
-
-
