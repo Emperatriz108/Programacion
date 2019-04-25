@@ -1,3 +1,11 @@
+//Universidad de El Salvador
+//Facultad Multidisciplinaria Oriental
+//Carrera: Ingenieria en Sistemas Informaticos
+//Asignatura: Programacion II
+//Nombre: Gema Emperatriz Manzano Machuca
+//Carnet: MM18024
+//Fecha de creacion: 25-04-2019
+
 #include <iostream>
 #include "misclases.h"
 
