@@ -150,7 +150,7 @@ static void Click_CB(Fl_Widget *w, void *data){
 	};
 
 	if( strcmp(w->label(),  "China") == 0 ){
-		fl_message("%s",  "Pekín");
+		fl_message("%s",  "Pekin");
 	};
 
 	if( strcmp(w->label(), "Belice") == 0 ){
