@@ -146,7 +146,7 @@ static void Click_CB(Fl_Widget *w, void *data){
 	};
 
 	if( strcmp(w->label(), "Rusia") == 0 ){
-		fl_message("%s", "Moscú"); 
+		fl_message("%s", "Moscu"); 
 	};
 
 	if( strcmp(w->label(),  "China") == 0 ){
