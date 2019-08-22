@@ -1,3 +1,10 @@
+//Universidad de El Salvador
+//Facultad Multidisciplinaria Oriental
+//Ingenieria de Sistemas Informaticos
+//Nombre: Gema Emperatriz Manzano Machuca
+//Tema: Arboles Binarios de Busqueda
+//Fecha: 21-08-2019
+
 #include <iostream>
 
 using namespace std;
